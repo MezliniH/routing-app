@@ -1,10 +1,12 @@
 import React , {useState} from 'react'
+import { Routes  , Link, Route,  } from 'react-router-dom';
 import './App.css'
-import MovieNavbar from './MovieNavbar/MovieNavbar'
+import MovieNavbar from './routerComponents/MovieNavbar/MovieNavbar'
 import "bootstrap/dist/css/bootstrap.min.css";
-import MovieData from './Data/MovieData';
-import MovieList from './MovieList/MovieList';
-import AddMovie from './AddMovie/AddMovie';
+import MovieData from './routerComponents/Data/MovieData';
+import MovieList from "./routerComponents/MovieList/MovieList";
+import AddMovie from './routerComponents/AddMovie/AddMovie';
+import Trailer from './routerComponents/Trailer/Trailer';
 
 
 function App() {
@@ -21,22 +23,38 @@ function App() {
     setMovieListData([...movieListData ,input]);
   }
   return (
-    <div className='App'>
-      <MovieNavbar 
+    <div>
+    <div className ="header">
+    <Link to="/Home"><img src="https://img.rasset.ie/00150711-1600.jpg" alt="" className="logotof"/> 
+    <h1>The taste of real cinema </h1>
+    </Link>
+    </div>
+
+    <MovieNavbar 
       getTitleSearch={getTitleSearch}
       getRateSearch={getRateSearch}
      />
-    <div className="App-container">
-     <MovieList className="Movie-container" 
-      movieListData={movieListData} 
+
+    <MovieList
+      rateSearch={rateSearch}
       titleSearch={titleSearch}
-      rateSearch={rateSearch}/>
-     </div>
-     <div className="addMovie">
-     <AddMovie getMoviesListData={getMoviesListData}/>
-     </div>
-    </div>
+      movie 
+    /> 
+
+  <Routes>
+
+
+    <Route exact path="/Home">
+    
+    <Route Route exact path="/Add" components={<AddMovie getMoviesListData={getMoviesListData} />}>  </Route>
+
+    <Route exact path="/trailer" components ={<Trailer/>}/> </Route>
+   
+  </Routes>
+  
+  </div>
+ 
   )
 }
 
-export default App
+export default App ; 

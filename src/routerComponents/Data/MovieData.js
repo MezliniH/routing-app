@@ -5,7 +5,9 @@ const MovieData = [
       posterurl:
         "https://m.media-amazon.com/images/M/MV5BMjAzNjkzMzcwNV5BMl5BanBnXkFtZTcwMzE0NDYyMQ@@._V1_.jpg",
       rating: 4, 
-      discription : " In czarist Russia, a neurotic soldier and his distant cousin formulate a plot to assassinate Napoleon. "
+      discription : " In czarist Russia, a neurotic soldier and his distant cousin formulate a plot to assassinate Napoleon. ",
+      trailer : 
+        "https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiurtG8zfT0AhX2DmMBHZ-XD9AQuAJ6BAgEEA0&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DNrf3X89aDhk&usg=AOvVaw1vS69TvgX0V5l-XqT13lGI"
     },
     {
       
